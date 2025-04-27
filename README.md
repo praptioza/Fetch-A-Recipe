@@ -86,6 +86,34 @@ Users can load a list of recipes, view recipe details for each recipe, and refre
   
 ---
 
+## How to Run the Project
+
+To run the **Fetch-A-Recipe** iOS application locally:
+
+1. **Clone the repository** to your local machine:
+   ```bash
+   git clone https://github.com/praptioza/Fetch-A-Recipe.git
+   ```
+
+2. **Open the project in Xcode**:
+
+   - Navigate to the project directory.
+   - Open `Fetch-A-Recipe.xcodeproj` by double-clicking it.
+
+3. **Build and Run**:
+
+   - Ensure you have **Xcode 15 or later** installed.
+   - Set the target device to an **iPhone simulator**.
+   - Press `Cmd + R` to build and run the app.
+
+4. **Requirements**:
+
+   - Xcode 15 or later (Swift 5.10 toolchain).
+   - Deployment Target: iOS 16.0+
+   - No external libraries or dependencies are needed — the project uses only native Apple frameworks (SwiftUI, Foundation, UIKit).
+
+---
+
 ## Final thoughts:
 
 I approached this project with a strong focus on writing clean, modern SwiftUI code, implementing Swift Concurrency using `async/await`, and designing an efficient custom image caching system without relying on any third-party libraries— as per the project requirements and platform support.
@@ -98,4 +126,4 @@ One of the biggest outcomes for me was a deeper understanding of the nuances of 
 
 Throughout the project, I focused on writing clean and well-documented code with comments to ensure easy understanding for new readers. I paid careful attention to project architecture and file organization, distributing code and components to maintain clear separation of logic. I implemented unit tests and UI tests to validate both backend and frontend logic, and I manually built a caching system for the first time. I consistently referred to Swift and iOS documentation, as well as developer forums, for syntax, concurrency, and different solution approaches. I also made a conscious effort to manage my time efficiently to both developing, debugging, fixing issues and testing and to follow industry best practices at every step of the development process.
 
-
+# Thank you!
