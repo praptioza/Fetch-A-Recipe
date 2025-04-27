@@ -16,6 +16,16 @@ Users can load a list of recipes, view recipe details for each recipe, and refre
 
 ---
 
+## Screenshots
+
+### Home Screen - List View of Recipes
+![Home Screen](./Screenshots/List.png)
+
+### Recipe Screen - Detail View of a selected recipe
+![Recipe Detail](./Screenshots/Details.png)
+
+---
+
 ## Focus Areas
 
 - **Swift Concurrency (async/await):** All network calls and data fetching and loading use Swift's concurrency features. Using **async/await** throughout the codebase amkes asynchronous code easier to maintain. This included data fetching, decoding, loading, a repsonsive UI, all without blocking the main thread. This was possible as network fetches and image loading happened in the background using async/await.
@@ -67,16 +77,23 @@ Users can load a list of recipes, view recipe details for each recipe, and refre
 ## Additional Information
 
 - **Architecture:** MVVM with clear separation between models, views, and viewmodels.
-- **Testing:** Unit tests for data fetching and image caching, plus basic UI tests.
+- **Testing:** Unit tests for data fetching and image caching, as well as basic UI tests.
 - **Swift Version:** Swift 5.10
 - **Deployment Target:** iOS 16+
 - **Dependencies:** Only Apple's native frameworks are used. No external libraries.
-- **Modern Practices:** `@MainActor`, actor-based isolation for services, SwiftUI reactive bindings.
-
-_See the provided screenshots and/or demo video for a quick visual overview._
-
+- **Modern Practices:** `@MainActor`, actor-based isolation for services, SwiftUI reactive bindings using `@StateObject` and `ObservableObject`.
 ---
 
-# Thank you!
+## Final thoughts:
 
-I enjoyed building this project and focusing on modern Swift techniques, clean architecture, and performance-conscious iOS development.
+I approached this project with a strong focus on writing clean, modern SwiftUI code, implementing Swift Concurrency using async/await, and designing an efficient custom image caching system without relying on any third-party libraries — fully respecting the project requirements and platform support.
+
+I spent about 12-15 hours over a week, balancing my time between setting up the architecture (networking, view models), focusing heavily on data and image loading and caching, crafting a clean and user-friendly SwiftUI interface, and writing meaningful unit and UI tests to verify the core logic.
+
+Throughout the project, I made choices like manually implementing memory and disk caching instead of using URLCache — to learn as well as demonstrate my knowledge of lower-level caching mechanics. I also ensured that even if the API returned malformed or empty data, the app would fail gracefully and give the user an appropriate feedback via UI.
+
+One of the biggest outcomes for me was a deeper understanding of the nuances of caching and what all possibilties are for caching and eviction, the power of Swift Concurrency, threading and testing.
+
+Throughout the project, I focused on writing clean and well-documented code with comments to ensure easy understanding for new readers. I paid careful attention to project architecture and file organization, distributing code and components to maintain clear separation of logic. I implemented unit tests and UI tests to validate both backend and frontend logic, and I manually built a caching system for the first time. I consistently referred to Swift and iOS documentation, as well as developer forums, for syntax, concurrency, and different solution approaches. I also made a conscious effort to manage my time efficiently to both developing, debugging, fixing issues and testing and to follow industry best practices at every step of the development process.
+
+
