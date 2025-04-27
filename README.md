@@ -25,6 +25,39 @@ Users can load a list of recipes, view recipe details for each recipe, and refre
 ![Recipe Detail](./Screenshots/Details.png)
 ---
 
+## ALL FEATURES:
+**UI Features (SwiftUI Frontend)**
+- **Recipe List View:** Displays a scrollable list of recipes showing the recipe's name, cuisine type, and a small image.
+- **Pull-to-Refresh:** Allows users to refresh the list manually by pulling down the list or tapping a toolbar button.
+- **Recipe Detail View:** Displays more detailed information about the selected recipe.
+- **Error States:** Displays user-friendly error messages if data fails to load (e.g., network error, malformed data, empty data).
+- **Navigation:** Smooth navigation from the list view to the recipe detail view using SwiftUI `NavigationLink`.
+- **Adaptive Layout:** Works correctly across different iPhone screen sizes using SwiftUI’s responsive layouts.
+
+**Backend Features (ViewModel & Caching Logic)**
+- **Recipe Fetching (Networking):** Fetches recipe data from a JSON API endpoint asynchronously using `Swift Concurrency (async/await)`.
+- **State Management:** Uses SwiftUI's `@StateObject` and `@Published` properties to manage UI states.
+- **Memory Image Caching:** Caches downloaded images in memory using `NSCache`, to avoid redundant network calls.
+- **Disk Image Caching:** Saves downloaded images to local disk storage `FileManager`.
+- **Load from Cache First:** Tries to load images from memory cache, then disk cache, then network.
+- **Main Thread work:**: Uses `@MainActor` to ensure all UI state updates happen on the main thread.
+
+**API Integration (Recipe API)**
+- **Recipes Endpoint:** uses the main recipes API (https://d3jbb8n5wk0qxi.cloudfront.net/recipes.json) to fetch proper recipe data.
+- **Malformed Data Handling:** Detects if the API returns malformed JSON and handles it by showing an error.
+- **Empty Data Handling:** Detects if the API returns an empty recipe list and shows a friendly empty state to the user.
+- **HTTP Response Validation:** Validate that API responses have a proper HTTP 200 OK status before trying to decode the JSON.
+- **JSON Decoding:** Decodes JSON responses into Swift models.
+
+**Testing Features (Unit Tests & UI Tests)**
+- **Fetching Recipes Unit Tests:** Tests API success, empty responses, and malformed responses.
+- **Image Loading Unit Tests:** Tests image loading from memory cache and error handling when URL is invalid.
+- **ViewModel Unit Tests:** Tests ViewModel behavior on successful fetch, empty data, and correct errors.
+- **Basic UI Tests (XCUI Tests):** Simulates user flows like app launch, recipe list loading, tapping on a recipe, navigating to the details view and tests for expected app behaviors.
+
+---
+
+
 ## Focus Areas
 
 - **Swift Concurrency (async/await):** All network calls, data fetching and loading use Swift's concurrency features. Using **async/await** throughout the codebase makes asynchronous code easier to maintain. This included data fetching, decoding, loading, a repsonsive UI, all without blocking the main thread. This was possible as network fetches and image loading happened in the background using async/await making Swift's Concurrency extremely powerful and useful, especially for high-end apps.
@@ -45,15 +78,11 @@ Users can load a list of recipes, view recipe details for each recipe, and refre
 
 - **Total:** ~15 hours (3 hours/day across 5-6 days)
 - **Breakdown:**
-  - Networking & Concurrency(~3 hours): setting up model structure for corresponding JSON data of API, setting up networking layer in order to fetch recipes from the API asynchronously using async/await, error handling.
-    
-  - Image Caching System(~3 hours): developing the custom image caching system using an in-memory cache(eg, NSCache) for quick retrieval and writing to the disk to save images to the file system. Loading images from cache or disk whenever available, to reduce network usage.
-    
-  - UI Design(~3 hours): building user interface using SwiftUI, creating each individual row view, list view for all recipes, detail view for each recipe when navigated from the list, and styling.
-    
-  - Testing (Unit & UI)(~3 hours): deciding what components to test, writing test cases for core functionalities like data fetching, image caching. UITests for simulating and testing user interactions like loading recipes, tapping on a recipe, navigating to detail view, tapping links, reloading recipes.
-    
-  - Debugging(~2 hours): troubleshooting bugs and edge cases, throughout the development lifecycle whenever needed.
+  - Networking & Concurrency(~3 hours)    
+  - Image Caching System(~3 hours)    
+  - UI Design(~3 hours)
+  - Testing (Unit & UI)(~3 hours)
+  - Debugging(~2 hours)
     
 ---
 
