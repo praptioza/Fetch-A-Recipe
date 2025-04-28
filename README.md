@@ -76,13 +76,13 @@ Users can load a list of recipes, view recipe details for each recipe, and refre
 
 ## Time Spent
 
-- **Total:** ~15 hours (3 hours/day across 5-6 days)
+- **Total:** approx 6 to 8 hours (2 hours/day across 4 days)
 - **Breakdown:**
-  - Networking & Concurrency(~3 hours)    
-  - Image Caching System(~3 hours)    
-  - UI Design(~3 hours)
-  - Testing (Unit & UI)(~3 hours)
-  - Debugging(~2 hours)
+  - Networking & Concurrency(~1 hours)    
+  - Image Caching System(~2 hours)    
+  - UI Design(~2 hours)
+  - Testing (Unit & UI)(~1 hours)
+  - Debugging(~1 hours)
     
 ---
 
