@@ -104,17 +104,6 @@ Users can load a list of recipes, view recipe details for each recipe, and refre
   
 ---
 
-## Additional Information
-
-- **Architecture:** MVVM 
-- **Testing:** Unit tests and UI tests.
-- **Swift Version:** Swift 5.10
-- **Deployment Target:** iOS 16+
-- **Dependencies:** Only Apple's native frameworks (No external libraries)
-- **Modern Practices:** `async\await`, `@MainActor`, actor-based isolation for services, SwiftUI reactive bindings using `@StateObject` and `ObservableObject`.
-  
----
-
 ## How to Run the Project
 
 To run the **Fetch-A-Recipe** iOS application locally:
@@ -137,7 +126,7 @@ To run the **Fetch-A-Recipe** iOS application locally:
 
 4. **Requirements**:
 
-   - Xcode 15 or later (Swift 5.10 toolchain).
+   - Xcode 15 or later.
    - Deployment Target: iOS 16.0+
    - No external libraries or dependencies are needed — the project uses only native Apple frameworks (SwiftUI, Foundation, UIKit).
 
